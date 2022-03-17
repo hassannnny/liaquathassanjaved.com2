@@ -7,22 +7,33 @@
 
     <style>
 
-            html, body {
-            margin: 0px;
-            height: 110%;
+                
+            * {
+                box-sizing: border-box;
+                
+            }
 
-            background-image: linear-gradient(to top, 
-            rgba(112,125,144,0) 85%, rgba(82,131,183,1) 95%), 
-            url(assets/img/PicOfHassan2.jpg);
-            background-size: cover; 
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-             
+             html, body {
+             margin: 0px;
+             height: 110%;
+             background-color: rgba(82,131,183,1);
+             }
+
+             .firstImg {
+                background-image: linear-gradient(to top, 
+                rgba(112,125,144,0) 85%, rgba(82,131,183,1) 95%), 
+                url(assets/img/PicOfHassan2.jpg);
+                background-size: cover; 
+                background-repeat: no-repeat;
+                background-position: center;
+                margin: 0px;
+                height: 110%;
+
+             }
             .message {
                 position: absolute;
                 right: 500px;
-                top: 650px; 
+                top: 740px; 
                 color: white;
                 font-size: 50px;
                 font-family: monospace;
@@ -84,7 +95,7 @@
                 float: left;
                 font-weight: 300px;
                 margin: 0px;
-                padding-block-start: 0px;
+                padding-inline-start: 0px;
             }
 
             nav ul li{
@@ -104,16 +115,35 @@
                 filter: brightness(150%);
             }
 
+            .row {
+                display:flex
+            }
+
+            .column {
+                flex: 50%;
+                padding: 0;
+            }
+
+            .BeachTheme {
+                height: 50%;
+                width: 100%;
+                filter: blur(4px);
+            }
+            .secondImg {
+                width: 100%;
+                height: 50%; 
+            
+            }
+            
+            
     </style>
-
 </head>
-
 <body>
+        <div class="firstImg">
 
-        <div class = "message">
-            <p id = "introTxt">Welcome! My name is Hassan.</p>
-        </div>
-
+                <div class = "message">
+                    <p id = "introTxt">Welcome! My name is Hassan.</p>
+                </div>
 
                 <nav class="hoverTing">
 
@@ -122,16 +152,27 @@
                         <li><a href="assets/img/Javed_Resume.pdf" target="_blank">A</a></li>    
                         <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Test</a></li>
                     </ul>
-   
+
                 </nav>
+        </div>   
 
-            
-        
+        <div class="row">
+
+            <div class="column"> 
+                <img class="BeachTheme" src="assets/img/RepeatingBeach2.jpg">
+            </div>
+            <div class="column">
+                <defs>
+                    <filter id="blur">
+                      <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
+                    </filter>
+                  </defs>
+                 <img class = "secondImg" src="assets/img/AnotherPicOfMe.jpg">
+                </div>
+                    
+            </div>
+
         </div>
-     </div>   
-
-        <script>
-        </script>
-</body>
+</body> 
 
 </html>
